@@ -2,7 +2,8 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const server = express();
-mongoose.connect('mongodb://localhost/test');
+const DB_URL = process.env.MONGOLAB_URI || 'mongodb://localhost/test';
+mongoose.connect(DB_URL);
 mongoose.Promise = global.Promise;
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, 'MongoDB connection error:'));
