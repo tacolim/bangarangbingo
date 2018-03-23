@@ -12,8 +12,6 @@ db.on('error', console.error.bind(console, 'MongoDB connection error:'));
 server.use(express.static(path.join(__dirname, '../bingo/build')));
 
 server.get('/cards', (req, res) => {
-  console.log('test');
-  res.send('test');
   res.json([]);
 });
 
