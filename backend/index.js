@@ -1,6 +1,12 @@
 const express = require('express');
+const mongoose = require('mongoose');
 
 const server = express();
+mongoose.connect('mongodb://localhost/test');
+mongoose.Promise = global.Promise;
+const db = mongoose.connection;
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+
 
 server.get('/cards', (req, res) => {
   res.json([]);
