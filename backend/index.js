@@ -2,7 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 
 const server = express();
-const DB_URL = process.env.MONGOLAB_URI || 'mongodb://localhost/test';
+const DB_URL = process.env.MONGODB_URI || 'mongodb://localhost/test';
 mongoose.connect(DB_URL);
 mongoose.Promise = global.Promise;
 const db = mongoose.connection;
