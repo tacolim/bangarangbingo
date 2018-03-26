@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import { Route } from 'react-router-dom';
 import './App.css';
+import { Landing } from './components';
 
 // eslint-disable-next-line react/prefer-stateless-function
 class App extends Component {
@@ -7,12 +9,7 @@ class App extends Component {
     return (
       // eslint-disable-next-line react/jsx-filename-extension
       <div className="App">
-        <header className="App-header">
-          <h1 className="App-title">Welcome to Bangarang Bingo</h1>
-        </header>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
+        <Route exact path="/" component={Landing} />
       </div>
     );
   }
